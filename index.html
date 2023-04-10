@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="website icon" type="png" href="img/communication.png">
+    <title>Product Management System</title>
+</head>
+<body class="text-capitalize bg-black text-light">
+    <div class="container px-5 w-75">
+        <div class="formcontainer my-5">
+            <h1 class="mb-5 text-warning">
+                product management system
+            </h1>
+            <div class="formGroup mb-4">
+                <label for="productName" class="mb-3">
+                    product name
+                </label>
+                <input type="text" id="productName" class="form-control" placeholder="Toshipa, iphone, LG, ect..">
+                <p class="invalid-name-message rounded text-danger d-none mt-1">
+                    Product Name required. Note:Start With Capital Letter(A,B,C,...)
+                </p>
+            </div>
+            <div class="formGroup mb-5">
+                <label for="productPrice" class="mb-3">
+                    product Price
+                </label>
+                <input type="number" id="productPrice" class="form-control" placeholder="Product Price..">
+            </div>
+            <div class="formGroup mb-5">
+                <label for="productCategory" class="mb-3">
+                    product Category
+                </label>
+                <input type="text" id="productCategory" class="form-control" placeholder="Phone, TV, Laptop, ect..">
+            </div>
+            <div class="formGroup mb-5">
+                <label for="productCount" class="mb-3">
+                    product Count
+                </label>
+                <input type="number" id="productCount" class="form-control" placeholder="Product Count..">
+            </div>
+            <div class="formGroup mb-5">
+                <label for="productdesc" class="mb-3">
+                    product describtion
+                </label>
+                <textarea type="text" id="productdesc" class="form-control"
+                    placeholder="Describe Your Product.."></textarea>
+            </div>
+            <p class="invalidmsg d-none p-2 rounded text-danger border-2 border-danger bg-danger bg-opacity-10  mx-auto text-center">
+                Invalid inputed data , check your data again
+            </p>
+            <button class="btn btn-outline-warning btn-sm" id="addBtn" onclick="addProduct()">
+                Add Product
+            </button>
+            <button onclick="updateProduct([currentProductIndex])" id="updateBtn" class="btn btn-outline-success d-none">
+                UpDate Product
+            </button>
+            <button onclick="cancelTranaction()" id="cancel" class="btn btn-outline-danger d-none">
+                Cancel
+            </button>
+
+        </div>
+        <div class="search">
+            <input type="search" name="search" class="form-control mb-3 w-75 mx-auto" placeholder="Search By Product Name" oninput="searchByName(this.value)">
+        </div>
+        <div class="tableContainer">
+            <table class="table  p-3 text-light text-center table-striped">
+                <thead class="">
+                    <th>index</th>
+                    <th>productName</th>
+                    <th>productPrice</th>
+                    <th>productCategory</th>
+                    <th>productCount</th>
+                    <th>productdescription</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="tBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/ProductManagementSystem.js"></script>
+</body>
+</html>
